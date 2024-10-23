@@ -12,7 +12,6 @@ import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.apache.hc.core5.http.*;
 import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.apache.hc.core5.net.URIBuilder;
-import org.apache.http.impl.client.BasicResponseHandler;
 
 import java.io.IOException;
 import java.net.URI;
@@ -44,7 +43,7 @@ public class GotifyConnection {
         return ConfigManager.getConfig().enabled;
     }
 
-
+    @SuppressWarnings("unused")
     public static void sendMessage(String title, String message) throws IOException, URISyntaxException {
         sendMessage(title, message, GotifyPriorityLevel.NORMAL);
     }
