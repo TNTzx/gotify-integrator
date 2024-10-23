@@ -1,5 +1,5 @@
 {
-  "required": true,
+  "required": false,
   "minVersion": "0.8",
   "package": "me.tntz.gotify_integrator.client.mixin",
   "compatibilityLevel": "JAVA_21",
