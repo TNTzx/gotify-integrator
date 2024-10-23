@@ -7,7 +7,7 @@
   "authors": [],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/gotify_integrator/icon.png",
+  "icon": "./assets/icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [

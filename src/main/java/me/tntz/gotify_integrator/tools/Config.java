@@ -9,7 +9,7 @@ public class Config {
     public String appToken = "appToken here";
 
     public HashMap<String, Object> getData() {
-        HashMap<String, Object> data = new HashMap<String, Object>();
+        HashMap<String, Object> data = new HashMap<>();
         data.put("enabled", enabled);
         data.put("serverURL", serverURL);
         data.put("port", port);

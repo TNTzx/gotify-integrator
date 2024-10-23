@@ -6,24 +6,17 @@ import me.tntz.gotify_integrator.tools.ConfigManager;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.entity.mime.MultipartEntityBuilder;
 import org.apache.hc.client5.http.entity.mime.StringBody;
+import org.apache.hc.client5.http.impl.classic.BasicHttpClientResponseHandler;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 import org.apache.hc.core5.http.*;
 import org.apache.hc.core5.http.io.HttpClientResponseHandler;
 import org.apache.hc.core5.net.URIBuilder;
+import org.apache.http.impl.client.BasicResponseHandler;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
-
-class AutoReturnResponseHandler implements HttpClientResponseHandler<ClassicHttpResponse> {
-
-    @Override
-    public ClassicHttpResponse handleResponse(ClassicHttpResponse classicHttpResponse) throws HttpException, IOException {
-        return classicHttpResponse;
-    }
-}
 
 
 public class GotifyConnection {
@@ -68,8 +61,8 @@ public class GotifyConnection {
                 .build();
         req.setEntity(payload);
 
-        HttpClientResponseHandler<ClassicHttpResponse> responseHandler = new AutoReturnResponseHandler();
-        ClassicHttpResponse response = httpClient.execute(req, responseHandler);
-        Gotify_integrator.LOGGER.info("Sent message of priority {}: {} | {}", priorityLevel.name(), title, message);
+        HttpClientResponseHandler<String> responseHandler = new BasicHttpClientResponseHandler();
+        String response = httpClient.execute(req, responseHandler);
+        Gotify_integrator.LOGGER.info("Sent message of priority {}: {} | {} || {}", priorityLevel.name(), title, message, response);
     }
 }

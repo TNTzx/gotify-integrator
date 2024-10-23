@@ -71,7 +71,7 @@ public class EventRegisterer {
             );
         } catch (IOException | URISyntaxException e) {
             throw new RuntimeException(e);
-        };
+        }
     }
 
 
