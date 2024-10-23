@@ -19,7 +19,7 @@ import java.util.List;
 public class CommandsManager {
     public static void onInitialize() {
         CommandRegistrationCallback.EVENT.register(((commandDispatcher, commandRegistryAccess, registrationEnvironment) -> {
-            LiteralArgumentBuilder<ServerCommandSource> root = literal("setMinPriorityLevel");
+            LiteralArgumentBuilder<ServerCommandSource> root = literal("setminprioritylevel");
             List<LiteralArgumentBuilder<ServerCommandSource>> commands = Lists.transform(
                     Arrays.asList(GotifyPriorityLevel.values()),
                     priorityLevel ->
