@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "gotify_integrator",
+  "version": "${version}",
+  "name": "Gotify Integrator",
+  "description": "Mod that integrates server messages to Gotify.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/gotify_integrator/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "me.tntz.gotify_integrator.client.Gotify_integratorClient"
+    ],
+    "main": [
+      "me.tntz.gotify_integrator.Gotify_integrator"
+    ]
+  },
+  "mixins": [
+    "gotify_integrator.mixins.json",
+    {
+      "config": "gotify_integrator.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
